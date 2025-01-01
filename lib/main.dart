@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/pages/portfolio_page.dart';
+import 'package:portfolio/themes/themes.dart';
+import 'package:portfolio/ui/pages/dashboard/portfolio_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Fakhry Mubarak",
-      theme: ThemeData.dark(),
+      theme: getAppTheme(context),
       home: const PortfolioPage(),
     );
   }
