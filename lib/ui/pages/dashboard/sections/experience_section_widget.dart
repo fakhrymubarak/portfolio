@@ -4,49 +4,86 @@ import 'package:portfolio/ui/model/experience_section.dart';
 class ExperienceSectionWidget extends StatelessWidget {
   final ExperienceSection section;
   final double height;
+  final double paddingHorizontal;
 
   const ExperienceSectionWidget({
     required this.section,
     required this.height,
+    required this.paddingHorizontal,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      padding: const EdgeInsets.all(20),
+      padding:
+          EdgeInsets.symmetric(vertical: 16, horizontal: paddingHorizontal),
+      constraints: BoxConstraints(minHeight: height),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             section.title,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
-          const SizedBox(height: 20),
-          ...section.experiences.map(
-            (experience) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    experience.title,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    experience.date,
-                    style: const TextStyle(
-                        fontSize: 14, fontStyle: FontStyle.italic),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    experience.description,
-                    style: const TextStyle(fontSize: 16),
-                  ),
-                ],
+          const SizedBox(height: 24),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: section.experiences
+                .map((experience) => _ExperienceCardWidget(experience))
+                .toList(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ExperienceCardWidget extends StatelessWidget {
+  final ExperienceItem experience;
+
+  const _ExperienceCardWidget(this.experience);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 48,
+            height: 48,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: DecorationImage(
+                image: NetworkImage(experience.logo),
               ),
+            ),
+          ),
+          SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  experience.title,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  experience.date,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontStyle: FontStyle.italic),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  experience.description,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ],
             ),
           ),
         ],

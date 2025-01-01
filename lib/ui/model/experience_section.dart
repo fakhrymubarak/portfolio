@@ -10,11 +10,13 @@ class ExperienceSection {
 
 class ExperienceItem {
   final String title;
+  final String logo;
   final String date;
   final String description;
 
   ExperienceItem({
     required this.title,
+    required this.logo,
     required this.date,
     required this.description,
   });

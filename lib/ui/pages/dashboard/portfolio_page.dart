@@ -132,6 +132,7 @@ class PortfolioView extends StatelessWidget {
                   ExperienceSectionWidget(
                     section: viewModel.experienceSection,
                     height: sectionHeight,
+                    paddingHorizontal: paddingHorizontal,
                     key: experienceKey,
                   ),
                   ContactSectionWidget(
