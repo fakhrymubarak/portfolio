@@ -26,8 +26,14 @@ class PortfolioView extends StatelessWidget {
   Widget build(BuildContext context) {
     final viewModel = Provider.of<PortfolioViewModel>(context);
     final mediaQuerySize = MediaQuery.of(context).size;
-    final sectionHeight = mediaQuerySize.height * 0.75;
     final isMobile = mediaQuerySize.width < 600;
+    final isWideWeb = mediaQuerySize.width < 1000;
+    final sectionHeight = mediaQuerySize.height * 0.8;
+    final double paddingHorizontal = isMobile
+        ? 16
+        : isWideWeb
+            ? mediaQuerySize.width * 0.15
+            : mediaQuerySize.width * 0.1;
 
     final homeKey = GlobalKey();
     final projectKey = GlobalKey();
@@ -43,8 +49,15 @@ class PortfolioView extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar:
-          isMobile ? AppBar(centerTitle: true, title: Text("Fakhry")) : null,
+      appBar: isMobile
+          ? AppBar(
+              centerTitle: true,
+              title: Text(
+                "Fakhry",
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+            )
+          : null,
       drawer: isMobile
           ? Drawer(
               child: ListView(
@@ -107,14 +120,17 @@ class PortfolioView extends StatelessWidget {
                   HomeSectionWidget(
                     section: viewModel.homeSection,
                     height: sectionHeight,
+                    paddingHorizontal: paddingHorizontal,
                     key: homeKey,
                   ),
                   ProjectSectionWidget(
-                    viewModel.projectSection,
+                    section: viewModel.projectSection,
+                    height: sectionHeight,
                     key: projectKey,
                   ),
                   ExperienceSectionWidget(
-                    viewModel.experienceSection,
+                    section: viewModel.experienceSection,
+                    height: sectionHeight,
                     key: experienceKey,
                   ),
                   ContactSectionWidget(
@@ -155,10 +171,12 @@ class NavHeaderSectionWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'Fakhry',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
+          isMobile
+              ? SizedBox.shrink()
+              : Text(
+                  'Fakhry',
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
           if (!isMobile)
             Row(
               children: [

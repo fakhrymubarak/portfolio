@@ -4,12 +4,18 @@ import 'package:portfolio/ui/model/project_section.dart';
 
 class ProjectSectionWidget extends StatelessWidget {
   final ProjectSection section;
+  final double height;
 
-  const ProjectSectionWidget(this.section, {super.key});
+  const ProjectSectionWidget({
+    required this.section,
+    required this.height,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height,
       padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

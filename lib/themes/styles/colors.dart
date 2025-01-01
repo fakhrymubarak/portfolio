@@ -1,16 +1,25 @@
 part of 'app_themes.dart';
 
-class Colors {
-  Colors._();
-
-  static const primary = Color(0xFF08C0FF);
-  static const primaryDisabled = Color(0xFF08C0FF);
-
-  static const secondary = Color(0xFFAA7B36);
-  static const redError = Color(0xFFE03C4C);
+class AppColors {
+  AppColors._();
 
   static const black = Color(0xFF090A0A);
   static const white = Color(0xFFFFFFFF);
+  static const lightGray = Color(0xFFABABAB);
+  static const darkGray = Color(0xFF606060);
 
-  static const gray = Color(0xFFABABAB);
+  static const coralRed = Color(0xFFFF6F61); // Coral Red
+  static const deepLavender = Color(0xFF6B5B95); // Deep Lavender
+  static const roseQuartz = Color(0xFFF7CAC9); // Rose Quartz
+  static const oliveGreen = Color(0xFF88B04B); // Olive Green
+  static const retroRed = Color(0xFFFF4E50);
+
+  static const primary = AppColors.coralRed;
+  static const onPrimary = AppColors.white;
+  static const secondary = AppColors.deepLavender;
+  static const onSecondary = AppColors.white;
+  static const surface = AppColors.white;
+  static const onSurface = AppColors.black;
+  static const error = AppColors.retroRed;
+  static const onError = AppColors.white;
 }
