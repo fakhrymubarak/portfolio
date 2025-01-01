@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/themes/styles/app_themes.dart';
 import 'package:portfolio/ui/model/contact_section.dart';
 
 class ContactSectionWidget extends StatelessWidget {
@@ -16,13 +17,12 @@ class ContactSectionWidget extends StatelessWidget {
         children: [
           Text(
             section.title,
-            style: const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+            style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: AppColors.white),
           ),
           const SizedBox(height: 10),
-          Text(
+          SelectableText(
             section.email,
-            style: const TextStyle(fontSize: 16, color: Colors.white),
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.white),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
