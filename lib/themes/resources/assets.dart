@@ -4,8 +4,8 @@ part of 'resource.dart';
 class Assets {
   Assets._();
 
-  static const _assetIconPath = 'icons'; // TODO DONT FORGET ROLLBACK
-  static const _assetImagePath = 'images';
+  static const _assetIconPath = 'assets/icons';
+  static const _assetImagePath = 'assets/images';
 
   static const _darkAssetIconPath = "$_assetIconPath/dark";
   static const _lightAssetIconPath = "$_assetIconPath/light";

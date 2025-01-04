@@ -28,9 +28,20 @@ jobs:
       - name: Build Flutter Web
         run: flutter build web --release
 
-      # Step 5: Deploy to GitHub Pages
+      # Step 5: Fix asset directory content
+      - name: Fix asset directory contents
+        run: |
+          mv build/web/assets/assets/* build/web/assets
+          rmdir build/web/assets/assets
+
+      # Step 6: Modify base href in index.html
+      - name: Modify base href
+        run: sed -i 's|<base href="/">|<base href="/portfolio/">|' build/web/index.html
+
+      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # Use your PAT here
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/web
