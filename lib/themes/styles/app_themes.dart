@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'colors.dart';
+
 part 'text_styles.dart';
 
 // App Themes
@@ -50,6 +51,7 @@ ThemeData getAppTheme(BuildContext context) {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: AppColors.deepLavender,
+        textStyle: TextStyles.bold16pt()
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(

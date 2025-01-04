@@ -34,6 +34,8 @@ class Assets {
   static const icKotlinLight = "$_lightAssetIconPath/ic_kotlin_light.svg";
   static const icPostmanLight = "$_lightAssetIconPath/ic_postman_light.svg";
 
+  static const imgBgWebsite = "$_assetImagePath/img_bg_web.svg";
+
   /* Background Projects */
   static const imgAkuisisiLoyaltyBg = "$_assetImagePath/img_akuisisi_loyalty.webp";
   static const imgAlkhairaatBg = "$_assetImagePath/img_alkhairaat.webp";

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/model/experience_section.dart';
+import 'package:portfolio/utils/constant.dart';
 
 class ExperienceSectionWidget extends StatelessWidget {
   final ExperienceSection section;
@@ -18,7 +19,7 @@ class ExperienceSectionWidget extends StatelessWidget {
     return Container(
       padding:
           EdgeInsets.symmetric(vertical: 16, horizontal: paddingHorizontal),
-      constraints: BoxConstraints(minHeight: height),
+      constraints: BoxConstraints(minHeight: height, maxWidth: Const.maxWidthSection),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

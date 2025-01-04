@@ -1,11 +1,23 @@
+import 'dart:async';
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 import 'package:portfolio/themes/resources/resource.dart';
 import 'package:portfolio/ui/model/contact_section.dart';
 import 'package:portfolio/ui/model/experience_section.dart';
 import 'package:portfolio/ui/model/home_section.dart';
+import 'package:portfolio/ui/model/navigation_bar_section.dart';
 import 'package:portfolio/ui/model/project_section.dart';
+import 'package:portfolio/utils/constant.dart';
 
 class PortfolioViewModel extends ChangeNotifier {
+  int selectedNavBarId = 0;
+  Timer? _debounceTimer;
+  Offset _homeNavOffset = Offset(0, 0);
+  Offset selectedNavOffset = Offset(0, 0);
+
+  late List<NavigationBarSection> navBarSections;
+
   late final HomeSection homeSection;
   late final ProjectSection projectSection;
   late final ExperienceSection experienceSection;
@@ -16,6 +28,15 @@ class PortfolioViewModel extends ChangeNotifier {
   }
 
   void _initData() {
+    navBarSections = [
+      NavigationBarSection(id: Const.homeId, title: "Home", isSelected: true),
+      NavigationBarSection(
+          id: Const.projectId, title: "Projects", isSelected: false),
+      NavigationBarSection(
+          id: Const.experienceId, title: "Experience", isSelected: false),
+      NavigationBarSection(
+          id: Const.contactId, title: "Contact", isSelected: false),
+    ];
     homeSection = HomeSection(
       title: 'A. Muh. Fakhry Mubarak',
       subtitle: 'Android Developer',
@@ -173,5 +194,34 @@ Plan, develop, and build features with SOLID principles and clean architecture.
     );
 
     notifyListeners();
+  }
+
+  void selectSection(int selectedId, Offset? offset) {
+    if (selectedNavBarId == selectedId || offset == null) return;
+    if (_debounceTimer?.isActive == true) return;
+    if (selectedId == 0) setHomeNavOffset(offset);
+
+    navBarSections = navBarSections.map((navBar) {
+      return navBar.copyWith(isSelected: navBar.id == selectedId);
+    }).toList();
+
+    selectedNavBarId = selectedId;
+    selectedNavOffset = Offset(offset.dx - _homeNavOffset.dx, offset.dy - _homeNavOffset.dy);
+    notifyListeners();
+
+    _debounceTimer?.cancel();
+    _debounceTimer = Timer(Const.scrollDurationInMillis, () {
+      _debounceTimer = null;
+    });
+  }
+
+  void setHomeNavOffset(Offset offset) {
+    _homeNavOffset = offset;
+  }
+
+  @override
+  void dispose() {
+    _debounceTimer?.cancel();
+    super.dispose();
   }
 }

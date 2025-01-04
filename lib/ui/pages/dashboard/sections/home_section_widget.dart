@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/ui/model/home_section.dart';
+import 'package:portfolio/utils/constant.dart';
 
 class HomeSectionWidget extends StatelessWidget {
   final HomeSection section;
@@ -19,9 +20,11 @@ class HomeSectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 130),
       padding:
           EdgeInsets.symmetric(vertical: 16, horizontal: paddingHorizontal),
-      constraints: BoxConstraints(minHeight: height),
+      constraints:
+          BoxConstraints(minHeight: height, maxWidth: Const.maxWidthSection),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/themes/themes.dart';
 import 'package:portfolio/ui/model/home_section.dart';
 import 'package:portfolio/ui/model/project_section.dart';
+import 'package:portfolio/utils/constant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectSectionWidget extends StatelessWidget {
@@ -31,7 +32,7 @@ class ProjectSectionWidget extends StatelessWidget {
     return Container(
       padding:
           EdgeInsets.symmetric(vertical: 16, horizontal: paddingHorizontal),
-      constraints: BoxConstraints(minHeight: height),
+      constraints: BoxConstraints(minHeight: height, maxWidth: Const.maxWidthSection),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -107,7 +108,7 @@ class _ProjectInfoCardWidget extends StatelessWidget {
               bottomLeft: Radius.circular(16),
               bottomRight: Radius.circular(16),
             ),
-            color: AppColors.black30,
+            color: AppColors.black70,
           ),
           padding: const EdgeInsets.all(16),
           child: Row(
@@ -163,7 +164,7 @@ class _PlatformStackWidget extends StatelessWidget {
           topLeft: Radius.circular(32),
           bottomLeft: Radius.circular(32),
         ),
-        color: AppColors.black30,
+        color: AppColors.black70,
       ),
       padding: EdgeInsets.only(left: 24, right: 16, top: 8, bottom: 8),
       child: Row(
