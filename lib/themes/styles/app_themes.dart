@@ -25,14 +25,15 @@ ThemeData getAppTheme(BuildContext context) {
   // Generate text theme dynamically based on device type
   TextTheme generateTextTheme(bool isMobile) {
     return baseTheme.textTheme.copyWith(
-      headlineLarge: isMobile ? TextStyles.bold20pt() : TextStyles.bold28pt(),
-      headlineMedium:
-          isMobile ? TextStyles.semiBold16pt() : TextStyles.semiBold18pt(),
-      bodyMedium: isMobile ? TextStyles.reg12pt() : TextStyles.reg14pt(),
-      labelLarge:
-          isMobile ? TextStyles.semiBold14pt() : TextStyles.semiBold18pt(),
-      bodySmall:
-          isMobile ? TextStyles.reg10pt(AppColors.black) : TextStyles.reg12pt(),
+      headlineLarge: isMobile ? TextStyles.extraBold20ptStix() : TextStyles.extraBold28ptStix(),
+      headlineMedium: isMobile ? TextStyles.extraBold16pt() : TextStyles.extraBold24pt(),
+      headlineSmall: isMobile ? TextStyles.extraBold14pt() : TextStyles.extraBold20pt(),
+      labelLarge: isMobile ? TextStyles.semiBold14pt() : TextStyles.semiBold24pt(),
+      labelMedium: isMobile ? TextStyles.semiBold12pt() : TextStyles.semiBold20pt(),
+      labelSmall: isMobile ? TextStyles.semiBold10pt() : TextStyles.semiBold16pt(),
+      bodyLarge: isMobile ? TextStyles.reg14pt() : TextStyles.reg24pt(),
+      bodyMedium: isMobile ? TextStyles.reg12pt() : TextStyles.reg20pt(),
+      bodySmall: isMobile ? TextStyles.reg10pt() : TextStyles.reg16pt(),
     );
   }
 
@@ -42,8 +43,9 @@ ThemeData getAppTheme(BuildContext context) {
     textTheme: generateTextTheme(isMobile),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        foregroundColor: AppColors.white,
-        backgroundColor: AppColors.coralRed,
+        foregroundColor: AppColors.onPrimary,
+        backgroundColor: AppColors.primary,
+        textStyle: TextStyles.extraBold16pt(),
         elevation: 0,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       ),
@@ -51,7 +53,7 @@ ThemeData getAppTheme(BuildContext context) {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: AppColors.deepLavender,
-        textStyle: TextStyles.bold16pt()
+        textStyle: TextStyles.extraBold16pt()
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(

@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 import 'sections/contact_section_widget.dart';
 import 'sections/experience_section_widget.dart';
-import 'sections/home_section_widget.dart';
+import 'sections/home_section_widget_v2.dart';
 import 'sections/project_section_widget.dart';
 
 class PortfolioWebPage extends StatefulWidget {
@@ -93,7 +93,7 @@ class PortfolioWebPageState extends State<PortfolioWebPage> {
             controller: _scrollController,
             child: Column(
               children: [
-                HomeSectionWidget(
+                HomeSectionWidgetV2(
                   section: viewModel.homeSection,
                   height: sectionHeight,
                   paddingHorizontal: 100,
