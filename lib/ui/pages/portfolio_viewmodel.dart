@@ -41,13 +41,12 @@ class PortfolioViewModel extends ChangeNotifier {
       title: 'A. Muh. Fakhry Mubarak',
       subtitle: 'Android Developer',
       description:
-          'Currently working at PT Phincon as a consultant and developer for MyTelkomsel Android Application. Actively learning about Software Engineering with 3 years of professional experience. Has released several applications on the Google Play Store. Passionate about learning and challenging myself.',
-      image:
-          'https://media.licdn.com/dms/image/v2/D5603AQEqi71RoOGCtg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714805818487?e=1741219200&v=beta&t=pc9LoEvoAQfJj9XRK2weK7FENNlVBAmp4rbMxRVP-Cc',
+          'Software engineer with 3 years of experience in mobile app development, including several published Android apps on the Play Store. Actively expanding my expertise in software engineering and driven by a passion for learning and problem-solving.',
+      imagePath: Assets.imgAvatar,
       btnInteraction1: 'Interact with Me!',
       btnInteraction2: 'Download My CV',
       techStackSection: TechStackSectionUi(
-        title: "Experience With",
+        title: "EXPERIENCE WITH",
         highlightStacks: [
           TechStack(name: "Android", iconPath: Assets.icAndroidDark),
           TechStack(name: "Kotlin", iconPath: Assets.icKotlinDark),
@@ -206,7 +205,8 @@ Plan, develop, and build features with SOLID principles and clean architecture.
     }).toList();
 
     selectedNavBarId = selectedId;
-    selectedNavOffset = Offset(offset.dx - _homeNavOffset.dx, offset.dy - _homeNavOffset.dy);
+    selectedNavOffset =
+        Offset(offset.dx - _homeNavOffset.dx, offset.dy - _homeNavOffset.dy);
     notifyListeners();
 
     _debounceTimer?.cancel();

@@ -30,7 +30,7 @@ class HomeSectionWidget extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 80,
-            backgroundImage: Image.network(section.image).image,
+            backgroundImage: Image.network(section.imagePath).image,
           ),
           const SizedBox(height: 16),
           Text(

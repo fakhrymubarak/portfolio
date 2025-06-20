@@ -26,8 +26,8 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
   final defaultColors = AppColors.white;
   final textTheme = baseTheme.textTheme.copyWith(
     headlineLarge: isMobile
-        ? TextStyles.extraBold20pt(defaultColors)
-        : TextStyles.extraBold28pt(defaultColors),
+        ? TextStyles.extraBold24pt(defaultColors)
+        : TextStyles.extraBold55pt(defaultColors),
     headlineMedium: isMobile
         ? TextStyles.extraBold16pt(defaultColors)
         : TextStyles.extraBold24pt(defaultColors),
@@ -47,11 +47,11 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
         ? TextStyles.reg14pt(defaultColors)
         : TextStyles.reg24pt(defaultColors),
     bodyMedium: isMobile
-        ? TextStyles.reg12pt(defaultColors)
-        : TextStyles.reg20pt(defaultColors),
+        ? TextStyles.reg12pt(AppColorsDark.onSecondary)
+        : TextStyles.reg20pt(AppColorsDark.onSecondary),
     bodySmall: isMobile
-        ? TextStyles.reg10pt(defaultColors)
-        : TextStyles.reg16pt(defaultColors),
+        ? TextStyles.reg10pt(AppColorsDark.onSecondary)
+        : TextStyles.reg16pt(AppColorsDark.onSecondary),
   );
 
   return ThemeData(

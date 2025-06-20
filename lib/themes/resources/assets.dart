@@ -36,6 +36,11 @@ class Assets {
 
   static const imgBgWebsite = "$_assetImagePath/img_bg_web.svg";
   static const imgFakhryHello = "$_assetImagePath/img_fakhry_hello.webp";
+  static const imgAvatar = "$_assetImagePath/img_avatar.webp";
+
+  /*Background Decoration*/
+  static const imgBlurKotlin = "$_assetImagePath/img_blur_kotlin.webp";
+  static const imgBlurFlutter = "$_assetImagePath/img_blur_flutter.webp";
 
   /* Background Projects */
   static const imgAkuisisiLoyaltyBg = "$_assetImagePath/img_akuisisi_loyalty.webp";

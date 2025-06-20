@@ -36,7 +36,7 @@ class AppColorsDark {
   static const onPrimary = surface;
 
   static const secondary = Color(0xFF01579B);
-  static const onSecondary = AppColors.white;
+  static const onSecondary = Color(0xFFCECECE);
 
   static const surface = Color(0xFF161513);
   static const onSurface = AppColors.white;

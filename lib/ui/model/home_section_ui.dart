@@ -3,7 +3,7 @@ class HomeSectionUi {
   final String title;
   final String? subtitle;
   final String description;
-  final String image;
+  final String imagePath;
   final String btnInteraction1;
   final String btnInteraction2;
   final TechStackSectionUi techStackSection;
@@ -12,7 +12,7 @@ class HomeSectionUi {
     required this.title,
     this.subtitle,
     required this.description,
-    required this.image,
+    required this.imagePath,
     required this.btnInteraction1,
     required this.btnInteraction2,
     required this.techStackSection,
