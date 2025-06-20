@@ -1,14 +1,14 @@
 // Data Classes
-class HomeSection {
+class HomeSectionUi {
   final String title;
   final String? subtitle;
   final String description;
   final String image;
   final String btnInteraction1;
   final String btnInteraction2;
-  final TechStackSection techStackSection;
+  final TechStackSectionUi techStackSection;
 
-  HomeSection({
+  HomeSectionUi({
     required this.title,
     this.subtitle,
     required this.description,
@@ -19,12 +19,12 @@ class HomeSection {
   });
 }
 
-class TechStackSection {
+class TechStackSectionUi {
   final String title;
   final List<TechStack> stacks;
   final List<TechStack> highlightStacks;
 
-  TechStackSection({required this.title, required this.highlightStacks, required this.stacks});
+  TechStackSectionUi({required this.title, required this.highlightStacks, required this.stacks});
 }
 
 class TechStack {

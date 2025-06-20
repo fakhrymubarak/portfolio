@@ -1,16 +1,16 @@
-import 'package:portfolio/ui/model/home_section.dart';
+import 'package:portfolio/ui/model/home_section_ui.dart';
 
-class ProjectSection {
+class ProjectSectionUi {
   final String title;
-  final List<ProjectItem> projects;
+  final List<ProjectItemUi> projects;
 
-  ProjectSection({
+  ProjectSectionUi({
     required this.title,
     required this.projects,
   });
 }
 
-class ProjectItem {
+class ProjectItemUi {
   final String title;
   final String timeline;
   final String logo;
@@ -18,7 +18,7 @@ class ProjectItem {
   final String cta;
   final List<TechStack> stacks;
 
-  ProjectItem({
+  ProjectItemUi({
     required this.title,
     required this.timeline,
     required this.logo,

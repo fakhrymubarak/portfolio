@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/themes/styles/app_themes.dart';
-import 'package:portfolio/ui/model/contact_section.dart';
+import 'package:portfolio/ui/model/contact_section_ui.dart';
 
 class ContactSectionWidget extends StatelessWidget {
-  final ContactSection section;
+  final ContactSectionUi section;
 
   const ContactSectionWidget(this.section, {super.key});
 

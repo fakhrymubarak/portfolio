@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/themes/themes.dart';
-import 'package:portfolio/ui/model/home_section.dart';
+import 'package:portfolio/ui/model/home_section_ui.dart';
 import 'package:portfolio/utils/constant.dart';
 
 class HomeSectionWidgetV2 extends StatelessWidget {
-  final HomeSection section;
+  final HomeSectionUi section;
   final double height;
   final double paddingHorizontal;
 

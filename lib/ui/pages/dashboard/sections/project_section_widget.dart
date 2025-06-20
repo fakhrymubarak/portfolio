@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/themes/themes.dart';
-import 'package:portfolio/ui/model/home_section.dart';
+import 'package:portfolio/ui/model/home_section_ui.dart';
 import 'package:portfolio/ui/model/project_section.dart';
 import 'package:portfolio/utils/constant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectSectionWidget extends StatelessWidget {
-  final ProjectSection section;
+  final ProjectSectionUi section;
   final double height;
   final double paddingHorizontal;
 
@@ -60,7 +60,7 @@ class ProjectSectionWidget extends StatelessWidget {
 }
 
 class _ProjectCardWidget extends StatelessWidget {
-  final ProjectItem project;
+  final ProjectItemUi project;
 
   const _ProjectCardWidget(this.project);
 
@@ -93,7 +93,7 @@ class _ProjectCardWidget extends StatelessWidget {
 }
 
 class _ProjectInfoCardWidget extends StatelessWidget {
-  final ProjectItem project;
+  final ProjectItemUi project;
 
   const _ProjectInfoCardWidget(this.project);
 

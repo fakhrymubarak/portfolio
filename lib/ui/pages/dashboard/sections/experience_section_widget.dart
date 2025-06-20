@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/model/experience_section.dart';
+import 'package:portfolio/ui/model/experience_section_ui.dart';
 import 'package:portfolio/utils/constant.dart';
 
 class ExperienceSectionWidget extends StatelessWidget {
-  final ExperienceSection section;
+  final ExperienceSectionUi section;
   final double height;
   final double paddingHorizontal;
 
@@ -41,7 +41,7 @@ class ExperienceSectionWidget extends StatelessWidget {
 }
 
 class _ExperienceCardWidget extends StatelessWidget {
-  final ExperienceItem experience;
+  final ExperienceItemUi experience;
 
   const _ExperienceCardWidget(this.experience);
 

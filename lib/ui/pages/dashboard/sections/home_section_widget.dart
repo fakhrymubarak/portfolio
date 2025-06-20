@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/ui/model/home_section.dart';
+import 'package:portfolio/ui/model/home_section_ui.dart';
 import 'package:portfolio/utils/constant.dart';
 
 class HomeSectionWidget extends StatelessWidget {
-  final HomeSection section;
+  final HomeSectionUi section;
   final double height;
   final double paddingHorizontal;
 
@@ -73,7 +73,7 @@ class HomeSectionWidget extends StatelessWidget {
 }
 
 class ExperienceIconSectionWidget extends StatelessWidget {
-  final TechStackSection techStackSection;
+  final TechStackSectionUi techStackSection;
   final double parentPadding;
 
   const ExperienceIconSectionWidget(this.techStackSection, this.parentPadding,

@@ -3,10 +3,10 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:portfolio/themes/resources/resource.dart';
-import 'package:portfolio/ui/model/contact_section.dart';
-import 'package:portfolio/ui/model/experience_section.dart';
-import 'package:portfolio/ui/model/home_section.dart';
-import 'package:portfolio/ui/model/navigation_bar_section.dart';
+import 'package:portfolio/ui/model/contact_section_ui.dart';
+import 'package:portfolio/ui/model/experience_section_ui.dart';
+import 'package:portfolio/ui/model/home_section_ui.dart';
+import 'package:portfolio/ui/model/navigation_bar_section_ui.dart';
 import 'package:portfolio/ui/model/project_section.dart';
 import 'package:portfolio/utils/constant.dart';
 
@@ -16,12 +16,12 @@ class PortfolioViewModel extends ChangeNotifier {
   Offset _homeNavOffset = Offset(0, 0);
   Offset selectedNavOffset = Offset(0, 0);
 
-  late List<NavigationBarSection> navBarSections;
+  late List<NavigationBarSectionUi> navBarSections;
 
-  late final HomeSection homeSection;
-  late final ProjectSection projectSection;
-  late final ExperienceSection experienceSection;
-  late final ContactSection contactSection;
+  late final HomeSectionUi homeSection;
+  late final ProjectSectionUi projectSection;
+  late final ExperienceSectionUi experienceSection;
+  late final ContactSectionUi contactSection;
 
   PortfolioViewModel() {
     _initData();
@@ -29,15 +29,15 @@ class PortfolioViewModel extends ChangeNotifier {
 
   void _initData() {
     navBarSections = [
-      NavigationBarSection(id: Const.homeId, title: "Home", isSelected: true),
-      NavigationBarSection(
+      NavigationBarSectionUi(id: Const.homeId, title: "Home", isSelected: true),
+      NavigationBarSectionUi(
           id: Const.projectId, title: "Projects", isSelected: false),
-      NavigationBarSection(
+      NavigationBarSectionUi(
           id: Const.experienceId, title: "Experience", isSelected: false),
-      NavigationBarSection(
+      NavigationBarSectionUi(
           id: Const.contactId, title: "Contact", isSelected: false),
     ];
-    homeSection = HomeSection(
+    homeSection = HomeSectionUi(
       title: 'A. Muh. Fakhry Mubarak',
       subtitle: 'Android Developer',
       description:
@@ -46,7 +46,7 @@ class PortfolioViewModel extends ChangeNotifier {
           'https://media.licdn.com/dms/image/v2/D5603AQEqi71RoOGCtg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714805818487?e=1741219200&v=beta&t=pc9LoEvoAQfJj9XRK2weK7FENNlVBAmp4rbMxRVP-Cc',
       btnInteraction1: 'Interact with Me!',
       btnInteraction2: 'Download My CV',
-      techStackSection: TechStackSection(
+      techStackSection: TechStackSectionUi(
         title: "Experience With",
         highlightStacks: [
           TechStack(name: "Android", iconPath: Assets.icAndroidDark),
@@ -66,10 +66,10 @@ class PortfolioViewModel extends ChangeNotifier {
       ),
     );
 
-    projectSection = ProjectSection(
+    projectSection = ProjectSectionUi(
       title: 'Projects',
       projects: [
-        ProjectItem(
+        ProjectItemUi(
           title: 'MyTelkomsel',
           timeline: 'Jul 2023 — Present',
           logo: Assets.icMytelkomsel,
@@ -82,7 +82,7 @@ class PortfolioViewModel extends ChangeNotifier {
             TechStack(name: "Java", iconPath: Assets.icJavaLight),
           ],
         ),
-        ProjectItem(
+        ProjectItemUi(
           title: 'Alkhairaat',
           timeline: 'March 2023 — Jun 2023',
           logo: Assets.icAlkhairaat,
@@ -94,7 +94,7 @@ class PortfolioViewModel extends ChangeNotifier {
             TechStack(name: "Flutter", iconPath: Assets.icFlutterLight),
           ],
         ),
-        ProjectItem(
+        ProjectItemUi(
           title: 'HRESS CRM',
           timeline: 'Jan 2022 — Jun 2023',
           logo: Assets.icHressCrm,
@@ -106,7 +106,7 @@ class PortfolioViewModel extends ChangeNotifier {
             TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
           ],
         ),
-        ProjectItem(
+        ProjectItemUi(
           title: 'Akuisisi Loyalty',
           timeline: 'Jan 2022 — Jun 2023',
           logo: Assets.icAkuisisiLoyalty,
@@ -118,7 +118,7 @@ class PortfolioViewModel extends ChangeNotifier {
             TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
           ],
         ),
-        ProjectItem(
+        ProjectItemUi(
           title: 'Chakra App',
           timeline: 'Jan 2022 — Jun 2023',
           logo: Assets.icChakraLoyalty,
@@ -130,7 +130,7 @@ class PortfolioViewModel extends ChangeNotifier {
             TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
           ],
         ),
-        ProjectItem(
+        ProjectItemUi(
           title: 'Lifelog',
           timeline: 'Okt 2022 — Sept 2022',
           logo: Assets.icLifelog,
@@ -145,10 +145,10 @@ class PortfolioViewModel extends ChangeNotifier {
       ],
     );
 
-    experienceSection = ExperienceSection(
+    experienceSection = ExperienceSectionUi(
       title: 'Experience',
       experiences: [
-        ExperienceItem(
+        ExperienceItemUi(
           title: 'Android Developer for MyTelkomsel',
           logo:
               'https://media.licdn.com/dms/image/v2/C560BAQGlo4pZo6rcaQ/company-logo_100_100/company-logo_100_100/0/1631379820861?e=1743638400&v=beta&t=O17Ni3hryshz-PYyddPibHQwMp56cSmiwEUMGmRul1c',
@@ -161,7 +161,7 @@ Milestones :
 Plan, develop, and build features with SOLID principles and clean architecture.
 """,
         ),
-        ExperienceItem(
+        ExperienceItemUi(
           title: 'Mobile Development Instructor',
           logo:
               'https://media.licdn.com/dms/image/v2/C560BAQEVREspL4ipDQ/company-logo_100_100/company-logo_100_100/0/1630661916225/bangkit_academy_logo?e=1743638400&v=beta&t=amVqzi2oAgYEnCSmARtu4qnPMP3Mn7qK4IlYqSpPw7I',
@@ -169,7 +169,7 @@ Plan, develop, and build features with SOLID principles and clean architecture.
           description:
               'Help the Bangkit cohort to understand the Android Development course material through ILT sessions..',
         ),
-        ExperienceItem(
+        ExperienceItemUi(
           title: 'Software Engineer (Mobile | Kotlin & Flutter)',
           logo:
               'https://media.licdn.com/dms/image/v2/C560BAQEr14Jn030ACQ/company-logo_100_100/company-logo_100_100/0/1630572054737/pt_cakra_radha_mustika_kalbe_group_logo?e=1743638400&v=beta&t=4RuSRbQWtDxYaoWx_aEKhXn5f7yP2JjBfkyqDz_cNKk',
@@ -188,7 +188,7 @@ Plan, develop, and build features with SOLID principles and clean architecture.
       ],
     );
 
-    contactSection = ContactSection(
+    contactSection = ContactSectionUi(
       title: 'Contact',
       email: 'fakhrymubarak@gmail.com',
     );

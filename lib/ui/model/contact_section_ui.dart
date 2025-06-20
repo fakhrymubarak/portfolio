@@ -1,8 +1,8 @@
-class ContactSection {
+class ContactSectionUi {
   final String title;
   final String email;
 
-  ContactSection({
+  ContactSectionUi({
     required this.title,
     required this.email,
   });

@@ -1,20 +1,20 @@
-class ExperienceSection {
+class ExperienceSectionUi {
   final String title;
-  final List<ExperienceItem> experiences;
+  final List<ExperienceItemUi> experiences;
 
-  ExperienceSection({
+  ExperienceSectionUi({
     required this.title,
     required this.experiences,
   });
 }
 
-class ExperienceItem {
+class ExperienceItemUi {
   final String title;
   final String logo;
   final String date;
   final String description;
 
-  ExperienceItem({
+  ExperienceItemUi({
     required this.title,
     required this.logo,
     required this.date,
