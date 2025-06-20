@@ -24,4 +24,23 @@ class AppColors {
   static const onSurface = AppColors.black;
   static const error = AppColors.retroRed;
   static const onError = AppColors.white;
+
+  static const kotlinGradient = [Color(0xFFE44857), Color(0xFFC711E1), Color(0xFF7F52FF)];
+  static const flutterGradient = [Color(0xFF40C4FF), Color(0xFF01579B)];
+}
+
+class AppColorsDark {
+  AppColorsDark._();
+
+  static const primary = Color(0xFFC711E1);
+  static const onPrimary = surface;
+
+  static const secondary = Color(0xFF01579B);
+  static const onSecondary = AppColors.white;
+
+  static const surface = Color(0xFF161513);
+  static const onSurface = AppColors.white;
+
+  static const error = AppColors.retroRed;
+  static const onError = AppColors.white;
 }

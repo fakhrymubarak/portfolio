@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Fakhry Mubarak",
-      theme: getAppTheme(context),
+      theme: getAppTheme(context, true),
       home: const PortfolioPage(),
     );
   }
