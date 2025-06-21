@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/themes/themes.dart';
-import 'package:portfolio/ui/pages/dashboard/portfolio_page.dart';
+import 'package:portfolio/ui/pages/dashboard/portfolio_web_page_v1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Fakhry Mubarak",
       theme: getAppTheme(context, true),
-      home: const PortfolioPage(),
+      home: const PortfolioWebPageV1(),
     );
   }
 }
