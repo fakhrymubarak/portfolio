@@ -170,6 +170,7 @@ class TextStyles {
       fontSize: 16,
       fontWeight: FontWeight.w400,
       color: color ?? AppColors.black,
+      height: 1.65,
     );
   }
 
@@ -195,6 +196,15 @@ class TextStyles {
   static TextStyle reg10pt([Color? color]) {
     return GoogleFonts.poppins(
       fontSize: 10,
+      fontWeight: FontWeight.w400,
+      color: color ?? AppColors.black,
+    );
+  }
+
+  // Regular(w400), 8pt
+  static TextStyle reg8pt([Color? color]) {
+    return GoogleFonts.poppins(
+      fontSize: 8,
       fontWeight: FontWeight.w400,
       color: color ?? AppColors.black,
     );

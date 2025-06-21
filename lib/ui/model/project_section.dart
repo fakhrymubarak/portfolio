@@ -15,6 +15,7 @@ class ProjectItemUi {
   final String timeline;
   final String logo;
   final String image;
+  final String desc;
   final String cta;
   final List<TechStack> stacks;
 
@@ -23,6 +24,7 @@ class ProjectItemUi {
     required this.timeline,
     required this.logo,
     required this.image,
+    required this.desc,
     required this.cta,
     required this.stacks,
   });

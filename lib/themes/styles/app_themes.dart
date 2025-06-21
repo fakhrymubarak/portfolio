@@ -33,24 +33,24 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
     headlineSmall: isMobile
         ? TextStyles.extraBold16pt(defaultColors)
         : TextStyles.extraBold20pt(defaultColors),
-    labelLarge: isMobile
-        ? TextStyles.semiBold14pt(defaultColors)
-        : TextStyles.semiBold24pt(defaultColors),
-    labelMedium: isMobile
-        ? TextStyles.semiBold12pt(defaultColors)
-        : TextStyles.semiBold20pt(defaultColors),
-    labelSmall: isMobile
-        ? TextStyles.semiBold10pt(defaultColors)
-        : TextStyles.semiBold16pt(defaultColors),
     bodyLarge: isMobile
         ? TextStyles.reg14pt(defaultColors)
         : TextStyles.reg24pt(defaultColors),
     bodyMedium: isMobile
         ? TextStyles.reg12pt(AppColorsDark.onSecondary)
-        : TextStyles.reg20pt(AppColorsDark.onSecondary),
+        : TextStyles.reg16pt(AppColorsDark.onSecondary),
     bodySmall: isMobile
         ? TextStyles.reg10pt(AppColorsDark.onSecondary)
         : TextStyles.reg16pt(AppColorsDark.onSecondary),
+    labelLarge: isMobile
+        ? TextStyles.semiBold12pt(defaultColors)
+        : TextStyles.semiBold20pt(defaultColors),
+    labelMedium: isMobile
+        ? TextStyles.reg10pt(defaultColors)
+        : TextStyles.reg14pt(defaultColors),
+    labelSmall: isMobile
+        ? TextStyles.reg8pt(AppColorsDark.onSecondary)
+        : TextStyles.reg10pt(AppColorsDark.onSecondary),
   );
 
   return ThemeData(

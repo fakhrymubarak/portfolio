@@ -40,6 +40,7 @@ class Assets {
   /*Background Decoration*/
   static const imgBlurKotlin = "$_assetImagePath/img_blur_kotlin.webp";
   static const imgBlurFlutter = "$_assetImagePath/img_blur_flutter.webp";
+  static const imgStaticBackground = "$_assetImagePath/img_bg_web.webp";
 
   /* Background Projects */
   static const imgAkuisisiLoyaltyBg = "$_assetImagePath/img_akuisisi_loyalty.webp";

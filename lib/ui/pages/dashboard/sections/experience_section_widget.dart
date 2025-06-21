@@ -80,10 +80,7 @@ class _ExperienceCardWidget extends StatelessWidget {
                       ?.copyWith(fontStyle: FontStyle.italic),
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  experience.description,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
+                Text(experience.description),
               ],
             ),
           ),

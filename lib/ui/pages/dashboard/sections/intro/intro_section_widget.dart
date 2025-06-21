@@ -17,21 +17,29 @@ class IntroSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final section = context.watch<IntroSectionProvider>().section;
     final screenHeight = MediaQuery.of(context).size.height;
-    return SizedBox(
-      height: screenHeight,
+    return Container(
+      constraints: BoxConstraints(minHeight: screenHeight),
+      width: double.infinity,
       child: Stack(
         children: [
+          Positioned.fill(
+            child: Container(
+              color: Theme.of(context).colorScheme.surface,
+            ),
+          ),
           // Background glow elements
           Align(
-            alignment: Alignment(-1.3, -1.3),
+            alignment: const Alignment(-1.3, -1.3),
             child: Image.asset(Assets.imgBlurKotlin, width: 600, height: 600),
           ),
-          Align(
-            alignment: Alignment(1.3, 1.3),
-            child: Image.asset(Assets.imgBlurFlutter, width: 600, height: 600),
+          Positioned.fill(
+            child: Align(
+              alignment: const Alignment(1.3, 2),
+              child:
+                  Image.asset(Assets.imgBlurFlutter, width: 600, height: 600),
+            ),
           ),
-          // Content
-          HomeSectionWidgetV3(section),
+          Positioned.fill(child: HomeSectionWidgetV3(section))
         ],
       ),
     );

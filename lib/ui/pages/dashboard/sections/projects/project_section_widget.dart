@@ -6,8 +6,8 @@ import 'package:portfolio/themes/values/app_size.dart';
 import 'package:portfolio/ui/model/home_section_ui.dart';
 import 'package:portfolio/ui/model/project_section.dart';
 import 'package:portfolio/ui/pages/dashboard/sections/projects/project_section_provider.dart';
+import 'package:portfolio/utils/ui_utils.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProjectSectionWidgetV2 extends StatelessWidget {
   const ProjectSectionWidgetV2({super.key});
@@ -22,34 +22,18 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(height: 64),
             GradientText(
               text: section.title,
               style: Theme.of(context).textTheme.headlineMedium,
               colors: AppColors.kotlinGradient,
             ),
-            const SizedBox(height: 100),
+            const SizedBox(height: 32),
             ...List.generate(section.projects.length, (index) {
               final project = section.projects[index];
               final isEven = index % 2 == 0;
 
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 50.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (isEven) ...[
-                      _ProjectCardWidget(project),
-                      const SizedBox(width: 32),
-                      Expanded(child: _ProjectDescriptionWidget(project)),
-                    ] else ...[
-                      Expanded(child: _ProjectDescriptionWidget(project)),
-                      const SizedBox(width: 32),
-                      _ProjectCardWidget(project),
-                    ]
-                  ],
-                ),
-              );
+              return _ProjectRowWidget(project: project, isEven: isEven);
             }),
             Center(
               child: OutlinedButton(
@@ -75,15 +59,45 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
   }
 }
 
-class _ProjectDescriptionWidget extends StatelessWidget {
+class _ProjectRowWidget extends StatelessWidget {
   final ProjectItemUi project;
+  final bool isEven;
 
-  const _ProjectDescriptionWidget(this.project);
+  const _ProjectRowWidget({
+    required this.project,
+    required this.isEven,
+  });
+
+  static const _cardRatio = 45;
+  static const _textRatio = 55;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Lorem ipsum dolor sit amet consectetur. Duis malesuada neque morbi et aliquet eu. Egestas aliquet auctor morbi ut porttitor consequat. Fringilla dignissim nisi elit urna quisque. Volutpat tortor lorem vestibulum nisi mauris vestibulum integer mattis morbi. Duis malesuada neque morbi et aliquet eu. Egestas aliquet auctor morbi ut porttitor consequat.',
+    return InkWell(
+      onTap: () => launchWebUrl(Uri.parse(project.cta), context),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 16.0,
+          vertical: 24.0,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: isEven
+              ? [
+                  Expanded(
+                      flex: _cardRatio, child: _ProjectCardWidget(project)),
+                  const SizedBox(width: 32),
+                  Expanded(flex: _textRatio, child: Text(project.desc)),
+                ]
+              : [
+                  Expanded(flex: _textRatio, child: Text(project.desc)),
+                  const SizedBox(width: 32),
+                  Expanded(
+                      flex: _cardRatio, child: _ProjectCardWidget(project)),
+                ],
+        ),
+      ),
     );
   }
 }
@@ -95,40 +109,26 @@ class _ProjectCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    Future<void> launchWebUrl(Uri url, BuildContext context) async {
-      if (!await launchUrl(url)) {
-        SnackBar snackBar = SnackBar(
-          content: Text('Could not launch $url'),
-        );
-        if (context.mounted) ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      }
-    }
-
-    return InkWell(
-      onTap: () => launchWebUrl(Uri.parse(project.cta), context),
-      child: Container(
-        height: 300,
-        width: 400,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          image: DecorationImage(
-            image: AssetImage(project.image),
-            fit: BoxFit.cover,
+    return Container(
+      height: 300,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        image: DecorationImage(
+          image: AssetImage(project.image),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Stack(
+        fit: StackFit.expand,
+        alignment: Alignment.bottomCenter,
+        children: [
+          Positioned(
+            top: 16,
+            right: 0,
+            child: _PlatformStackWidget(project.stacks),
           ),
-        ),
-        child: Stack(
-          fit: StackFit.expand,
-          alignment: Alignment.bottomCenter,
-          children: [
-            Positioned(
-              top: 16,
-              right: 0,
-              child: _PlatformStackWidget(project.stacks),
-            ),
-            _ProjectInfoCardWidget(project)
-          ],
-        ),
+          _ProjectInfoCardWidget(project)
+        ],
       ),
     );
   }
@@ -156,34 +156,30 @@ class _ProjectInfoCardWidget extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 36,
-                height: 36,
+                width: 32,
+                height: 32,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(8),
                   image: DecorationImage(
                     image: AssetImage(project.logo),
                   ),
                 ),
               ),
               const SizedBox(width: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    project.timeline,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.copyWith(color: AppColors.surface),
-                  ),
-                  Text(
-                    project.title,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(color: AppColors.surface),
-                  ),
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      project.timeline,
+                      style: Theme.of(context).textTheme.labelSmall,
+                    ),
+                    Text(
+                      project.title,
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -210,10 +206,10 @@ class _PlatformStackWidget extends StatelessWidget {
       ),
       padding: EdgeInsets.only(left: 24, right: 16, top: 8, bottom: 8),
       child: Row(
-        spacing: 8,
+        spacing: 12,
         children: stacks
             .map((stack) =>
-                SvgPicture.asset(height: 36, width: 36, stack.iconPath))
+                SvgPicture.asset(height: 24, width: 24, stack.iconPath))
             .toList(),
       ),
     );
