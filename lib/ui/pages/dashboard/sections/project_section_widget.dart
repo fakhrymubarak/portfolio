@@ -8,13 +8,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 class ProjectSectionWidget extends StatelessWidget {
   final ProjectSectionUi section;
-  final double height;
-  final double paddingHorizontal;
 
   const ProjectSectionWidget({
     required this.section,
-    required this.height,
-    required this.paddingHorizontal,
     super.key,
   });
 
@@ -29,10 +25,12 @@ class ProjectSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
-      padding:
-          EdgeInsets.symmetric(vertical: 16, horizontal: paddingHorizontal),
-      constraints: BoxConstraints(minHeight: height, maxWidth: Const.maxWidthSection),
+      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 80),
+      constraints: BoxConstraints(
+          minHeight: screenHeight, maxWidth: Const.maxWidthSection),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

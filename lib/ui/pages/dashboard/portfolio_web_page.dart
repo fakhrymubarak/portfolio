@@ -101,8 +101,6 @@ class PortfolioWebPageState extends State<PortfolioWebPage> {
                 ),
                 ProjectSectionWidget(
                   section: viewModel.projectSection,
-                  height: sectionHeight,
-                  paddingHorizontal: 100,
                   key: projectKey,
                 ),
                 ExperienceSectionWidget(

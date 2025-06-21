@@ -38,7 +38,7 @@ class PortfolioViewModel extends ChangeNotifier {
           id: Const.contactId, title: "Contact", isSelected: false),
     ];
     homeSection = HomeSectionUi(
-      title: 'A. Muh. Fakhry Mubarak',
+      title: ['Hi, I am ', 'Fakhry ', 'Mubarak '],
       subtitle: 'Android Developer',
       description:
           'Software engineer with 3 years of experience in mobile app development, including several published Android apps on the Play Store. Actively expanding my expertise in software engineering and driven by a passion for learning and problem-solving.',

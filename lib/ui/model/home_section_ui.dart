@@ -1,6 +1,6 @@
 // Data Classes
 class HomeSectionUi {
-  final String title;
+  final List<String> title;
   final String? subtitle;
   final String description;
   final String imagePath;

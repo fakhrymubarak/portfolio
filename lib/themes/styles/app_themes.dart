@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-part 'colors.dart';
-
+part 'app_colors.dart';
 part 'text_styles.dart';
 
 ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
@@ -29,10 +28,10 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
         ? TextStyles.extraBold24pt(defaultColors)
         : TextStyles.extraBold55pt(defaultColors),
     headlineMedium: isMobile
-        ? TextStyles.extraBold16pt(defaultColors)
-        : TextStyles.extraBold24pt(defaultColors),
+        ? TextStyles.extraBold20pt(defaultColors)
+        : TextStyles.extraBold28pt(defaultColors),
     headlineSmall: isMobile
-        ? TextStyles.extraBold14pt(defaultColors)
+        ? TextStyles.extraBold16pt(defaultColors)
         : TextStyles.extraBold20pt(defaultColors),
     labelLarge: isMobile
         ? TextStyles.semiBold14pt(defaultColors)

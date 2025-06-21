@@ -34,7 +34,7 @@ class HomeSectionWidget extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            section.title,
+            section.title[0] + section.title[1] + section.title[3],
             style: Theme.of(context).textTheme.headlineLarge,
             textAlign: TextAlign.center,
           ),

@@ -70,6 +70,7 @@ class TextStyles {
       fontSize: 20,
       fontWeight: FontWeight.w800,
       color: color ?? AppColors.black,
+      letterSpacing: 1.2,
     );
   }
 
