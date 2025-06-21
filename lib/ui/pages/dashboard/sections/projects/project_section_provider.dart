@@ -4,6 +4,8 @@ import 'package:portfolio/ui/model/home_section_ui.dart';
 import 'package:portfolio/ui/model/project_section.dart';
 
 class ProjectSectionProvider extends ChangeNotifier {
+  static const int initialCount = 3;
+
   final ProjectSectionUi section = ProjectSectionUi(
     title: 'PROJECTS',
     projects: [
@@ -105,4 +107,16 @@ class ProjectSectionProvider extends ChangeNotifier {
       ),
     ],
   );
+
+  int _visibleCount = initialCount;
+
+  List<ProjectItemUi> get visibleProjects =>
+      section.projects.take(_visibleCount).toList();
+
+  bool get hasMore => _visibleCount < section.projects.length;
+
+  void loadMore() {
+    _visibleCount = section.projects.length;
+    notifyListeners();
+  }
 }

@@ -14,50 +14,46 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final section = context.watch<ProjectSectionProvider>().section;
+    final provider = context.watch<ProjectSectionProvider>();
+    final section = provider.section;
 
     return Center(
       child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 64),
         constraints: const BoxConstraints(maxWidth: AppSize.maxWidthHome),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 64),
             GradientText(
               text: section.title,
               style: Theme.of(context).textTheme.headlineMedium,
               colors: AppColors.kotlinGradient,
             ),
             const SizedBox(height: 32),
-            ...List.generate(section.projects.length, (index) {
-              final project = section.projects[index];
+            ...List.generate(provider.visibleProjects.length, (index) {
+              final project = provider.visibleProjects[index];
               final isEven = index % 2 == 0;
-
               return _ProjectRowWidget(project: project, isEven: isEven);
             }),
-            Center(
-              child: OutlinedButton(
-                onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Colors.white),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+            if (provider.hasMore)
+              Container(
+                margin: const EdgeInsets.only(top: 32),
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () => provider.loadMore(),
+                  child: const Text(
+                    'Load more',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
-                child: const Text(
-                  'Load more',
-                  style: TextStyle(color: Colors.white),
-                ),
               ),
-            ),
           ],
         ),
       ),
     );
   }
 }
+
 
 class _ProjectRowWidget extends StatelessWidget {
   final ProjectItemUi project;
