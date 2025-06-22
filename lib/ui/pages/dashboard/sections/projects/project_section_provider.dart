@@ -18,8 +18,9 @@ class ProjectSectionProvider extends ChangeNotifier {
             'MyTelkomsel is the official self-care mobile application from Telkomsel, Indonesia’s largest cellular provider, with over 100 million downloads and approximately 300,000 daily active users. '
             'In this project, I was responsible for planning, developing, and delivering multiple key features using Kotlin and Java within a clean architecture that adheres to SOLID principles. '
             'I also led and mentored junior developers, ensuring high code quality and team performance across various feature tracks.',
-        cta:
-            'https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm',
+        // cta:
+        //     'https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm',
+        cta: 'https://apkpure.com/alkhairaat-app/com.alkhairaat.membership',
         stacks: [
           TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
           TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),
@@ -51,9 +52,10 @@ class ProjectSectionProvider extends ChangeNotifier {
             'Chakra App is a loyalty membership application developed for Kalbe Nutritionals users. '
             'My primary responsibility included migrating the entire codebase from Java to Kotlin (up to 97%) and refactoring the architecture from MVP to MVVM. '
             'In addition, I worked on a white-label variant of the app using Flutter, expanding its usability across multiple brand implementations and streamlining future development processes.',
-        cta:
-            'https://play.google.com/store/apps/details?id=com.kalbe.cakraloyalty',
-        // cta: "https://apkpure.com/chakra-rewards/com.kalbe.cakraloyalty, // alternative CTA.
+        // cta:
+        //     'https://play.google.com/store/apps/details?id=com.kalbe.cakraloyalty',
+        cta: 'https://apkpure.com/chakra-rewards/com.kalbe.cakraloyalty',
+        // alternative CTA.
         stacks: [
           TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
           TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),

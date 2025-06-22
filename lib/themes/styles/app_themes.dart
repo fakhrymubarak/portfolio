@@ -29,7 +29,7 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
         ? TextStyles.extraBold24pt(defaultColors)
         : TextStyles.extraBold55pt(defaultColors),
     headlineMedium: isMobile
-        ? TextStyles.extraBold20pt(defaultColors)
+        ? TextStyles.bold20Pt(defaultColors)
         : TextStyles.extraBold28pt(defaultColors),
     headlineSmall: isMobile
         ? TextStyles.bold16Pt(defaultColors)
