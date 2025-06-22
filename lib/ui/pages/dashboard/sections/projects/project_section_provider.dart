@@ -18,9 +18,8 @@ class ProjectSectionProvider extends ChangeNotifier {
             'MyTelkomsel is the official self-care mobile application from Telkomsel, Indonesia’s largest cellular provider, with over 100 million downloads and approximately 300,000 daily active users. '
             'In this project, I was responsible for planning, developing, and delivering multiple key features using Kotlin and Java within a clean architecture that adheres to SOLID principles. '
             'I also led and mentored junior developers, ensuring high code quality and team performance across various feature tracks.',
-        // cta:
-        //     'https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm',
-        cta: 'https://apkpure.com/alkhairaat-app/com.alkhairaat.membership',
+        cta:
+            'https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm',
         stacks: [
           TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
           TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),
@@ -36,8 +35,9 @@ class ProjectSectionProvider extends ChangeNotifier {
             'Alkhairaat is a membership application designed for the Alkhairaat Islamic organization in Indonesia. It facilitates registration, member management, and organizational engagement. '
             'I developed the mobile app using Flutter with Bloc state management, focusing on clean, scalable, and robust architecture for both Android and iOS platforms. '
             'My responsibilities included implementing core features, maintaining performance consistency, and delivering a user-friendly interface tailored to the organization’s needs.',
-        cta:
-            'https://play.google.com/store/apps/details?id=com.alkhairaat.membership',
+        // cta:
+        // 'https://play.google.com/store/apps/details?id=com.alkhairaat.membership',
+        cta: 'https://apkpure.com/alkhairaat-app/com.alkhairaat.membership',
         stacks: [
           TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
           TechStack(name: 'Flutter', iconPath: Assets.icFlutterLight),
@@ -115,10 +115,11 @@ class ProjectSectionProvider extends ChangeNotifier {
   List<ProjectItemUi> get visibleProjects =>
       section.projects.take(_visibleCount).toList();
 
-  bool get hasMore => _visibleCount < section.projects.length;
+  bool get isExpanded => _visibleCount >= section.projects.length;
+  bool get hasToggle => section.projects.length > initialCount;
 
-  void loadMore() {
-    _visibleCount = section.projects.length;
+  void toggleExpanded() {
+    _visibleCount = isExpanded ? initialCount : section.projects.length;
     notifyListeners();
   }
 }

@@ -9,9 +9,15 @@ import 'package:portfolio/ui/pages/dashboard/sections/projects/project_section_p
 import 'package:portfolio/utils/ui_utils.dart';
 import 'package:provider/provider.dart';
 
-class ProjectSectionWidgetV2 extends StatelessWidget {
+class ProjectSectionWidgetV2 extends StatefulWidget {
   const ProjectSectionWidgetV2({super.key});
 
+  @override
+  State<ProjectSectionWidgetV2> createState() => _ProjectSectionWidgetV2State();
+}
+
+class _ProjectSectionWidgetV2State extends State<ProjectSectionWidgetV2>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<ProjectSectionProvider>();
@@ -33,20 +39,29 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
               colors: AppColors.kotlinGradient,
             ),
             const SizedBox(height: 32),
-            ...List.generate(provider.visibleProjects.length, (index) {
-              final project = provider.visibleProjects[index];
-              final isEven = index % 2 == 0;
-              return _ProjectRowWidget(project: project, isEven: isEven);
-            }),
-            if (provider.hasMore)
+            // 👇 Animated project list
+            AnimatedSize(
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+              alignment: Alignment.topCenter,
+              child: Column(
+                children: List.generate(provider.visibleProjects.length, (index) {
+                  final project = provider.visibleProjects[index];
+                  final isEven = index % 2 == 0;
+                  return _ProjectRowWidget(project: project, isEven: isEven);
+                }),
+              ),
+            ),
+
+            if (provider.hasToggle)
               Container(
                 margin: const EdgeInsets.only(top: 32),
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () => provider.loadMore(),
-                  child: const Text(
-                    'Load more',
-                    style: TextStyle(color: Colors.white),
+                  onPressed: () => provider.toggleExpanded(),
+                  child: Text(
+                    provider.isExpanded ? 'See less' : 'Load more',
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -56,6 +71,7 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
     );
   }
 }
+
 
 class _ProjectRowWidget extends StatelessWidget {
   const _ProjectRowWidget({

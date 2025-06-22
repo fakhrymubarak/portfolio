@@ -16,6 +16,6 @@ class FooterSectionProvider extends ChangeNotifier {
       LabeledCta(label: 'Contact Me', cta: 'https://api.whatsapp.com/send/?phone=6285155305499&text=Hi%20Fakhry, &type=phone_number&app_absent=0'),
     ],
     imagePath: Assets.imgContactMe,
-    signature: '©Crafted with ❤️ in 2025',
+    signature: '©Crafted with Flutter in 2025',
   );
 }

@@ -24,6 +24,7 @@ class ExperienceSectionWidget extends StatelessWidget {
             minHeight: screenHeight,
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GradientText(
                 text: section.title,
@@ -54,7 +55,7 @@ class _ExperienceCardWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(experience.logoPath, height: 54, width: 54),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
