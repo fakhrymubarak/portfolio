@@ -1,61 +1,82 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-part 'colors.dart';
+part 'app_colors.dart';
 part 'text_styles.dart';
 
-// App Themes
-ThemeData getAppTheme(BuildContext context) {
+ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
   final bool isMobile = MediaQuery.of(context).size.width < 600;
   final baseTheme = Theme.of(context);
 
-  final baseColorScheme = baseTheme.colorScheme.copyWith(
-    brightness: Brightness.light,
-    primary: AppColors.primary,
-    onPrimary: AppColors.onPrimary,
-    secondary: AppColors.secondary,
-    onSecondary: AppColors.onSecondary,
-    surface: AppColors.surface,
-    onSurface: AppColors.onSurface,
-    error: AppColors.error,
-    onError: AppColors.onError,
+  // TODO handle isDarkMode (light Mode) condition
+  final darkColorScheme = baseTheme.colorScheme.copyWith(
+    brightness: Brightness.dark,
+    primary: AppColorsDark.primary,
+    onPrimary: AppColorsDark.onPrimary,
+    secondary: AppColorsDark.secondary,
+    onSecondary: AppColorsDark.onSecondary,
+    surface: AppColorsDark.surface,
+    surfaceDim: AppColorsDark.surface,
+    onSurface: AppColorsDark.onSurface,
+    error: AppColorsDark.error,
+    onError: AppColorsDark.onError,
   );
 
   // Generate text theme dynamically based on device type
-  TextTheme generateTextTheme(bool isMobile) {
-    return baseTheme.textTheme.copyWith(
-      headlineLarge: isMobile ? TextStyles.bold20pt() : TextStyles.bold28pt(),
-      headlineMedium:
-          isMobile ? TextStyles.semiBold16pt() : TextStyles.semiBold18pt(),
-      bodyMedium: isMobile ? TextStyles.reg12pt() : TextStyles.reg14pt(),
-      labelLarge:
-          isMobile ? TextStyles.semiBold14pt() : TextStyles.semiBold18pt(),
-      bodySmall:
-          isMobile ? TextStyles.reg10pt(AppColors.black) : TextStyles.reg12pt(),
-    );
-  }
+  final defaultColors = AppColors.white;
+  final textTheme = baseTheme.textTheme.copyWith(
+    headlineLarge: isMobile
+        ? TextStyles.extraBold24pt(defaultColors)
+        : TextStyles.extraBold55pt(defaultColors),
+    headlineMedium: isMobile
+        ? TextStyles.bold20Pt(defaultColors)
+        : TextStyles.extraBold28pt(defaultColors),
+    headlineSmall: isMobile
+        ? TextStyles.bold16Pt(defaultColors)
+        : TextStyles.bold20Pt(defaultColors),
+    bodyLarge: isMobile
+        ? TextStyles.reg14pt(defaultColors)
+        : TextStyles.reg24pt(defaultColors),
+    bodyMedium: isMobile
+        ? TextStyles.reg12pt(AppColorsDark.onSecondary)
+        : TextStyles.reg16pt(AppColorsDark.onSecondary),
+    bodySmall: isMobile
+        ? TextStyles.reg10pt(AppColorsDark.onSecondary)
+        : TextStyles.reg16pt(AppColorsDark.onSecondary),
+    labelLarge: isMobile
+        ? TextStyles.semiBold12pt(defaultColors)
+        : TextStyles.semiBold20pt(defaultColors),
+    labelMedium: isMobile
+        ? TextStyles.reg10pt(defaultColors)
+        : TextStyles.reg14pt(defaultColors),
+    labelSmall: isMobile
+        ? TextStyles.reg8pt(AppColorsDark.onSecondary)
+        : TextStyles.reg10pt(AppColorsDark.onSecondary),
+  );
 
   return ThemeData(
-    colorScheme: baseColorScheme,
+    brightness: Brightness.dark,
+    colorScheme: darkColorScheme,
     unselectedWidgetColor: AppColors.lightGray,
-    textTheme: generateTextTheme(isMobile),
+    textTheme: textTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        foregroundColor: AppColors.white,
-        backgroundColor: AppColors.coralRed,
+        foregroundColor: AppColorsDark.onPrimary,
+        backgroundColor: AppColorsDark.primary,
+        textStyle: TextStyles.extraBold16pt(),
         elevation: 0,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       ),
     ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: AppColors.deepLavender,
-      ),
+          foregroundColor: AppColorsDark.onSurface,
+          textStyle: TextStyles.extraBold16pt()),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: AppColors.oliveGreen,
-        side: BorderSide(color: AppColors.oliveGreen, width: 2),
+        foregroundColor: AppColorsDark.secondary,
+        side: BorderSide(color: AppColorsDark.onSecondary, width: 2),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       ),
     ),

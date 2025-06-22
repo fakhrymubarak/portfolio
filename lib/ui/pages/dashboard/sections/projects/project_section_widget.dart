@@ -1,0 +1,231 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/core/ui/text/gradient_text_widget.dart';
+import 'package:portfolio/themes/themes.dart';
+import 'package:portfolio/themes/values/app_size.dart';
+import 'package:portfolio/ui/model/home_section_ui.dart';
+import 'package:portfolio/ui/model/project_section.dart';
+import 'package:portfolio/ui/pages/dashboard/sections/projects/project_section_provider.dart';
+import 'package:portfolio/utils/ui_utils.dart';
+import 'package:provider/provider.dart';
+
+class ProjectSectionWidgetV2 extends StatefulWidget {
+  const ProjectSectionWidgetV2({super.key});
+
+  @override
+  State<ProjectSectionWidgetV2> createState() => _ProjectSectionWidgetV2State();
+}
+
+class _ProjectSectionWidgetV2State extends State<ProjectSectionWidgetV2>
+    with TickerProviderStateMixin {
+  @override
+  Widget build(BuildContext context) {
+    final provider = context.watch<ProjectSectionProvider>();
+    final section = provider.section;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 64),
+        constraints: BoxConstraints(
+          maxWidth: AppSize.maxWidthHome,
+          minHeight: screenHeight,
+        ),
+        child: Column(
+          children: [
+            GradientText(
+              text: section.title,
+              style: Theme.of(context).textTheme.headlineMedium,
+              colors: AppColors.kotlinGradient,
+            ),
+            const SizedBox(height: 32),
+            // 👇 Animated project list
+            AnimatedSize(
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+              alignment: Alignment.topCenter,
+              child: Column(
+                children: List.generate(provider.visibleProjects.length, (index) {
+                  final project = provider.visibleProjects[index];
+                  final isEven = index % 2 == 0;
+                  return _ProjectRowWidget(project: project, isEven: isEven);
+                }),
+              ),
+            ),
+
+            if (provider.hasToggle)
+              Container(
+                margin: const EdgeInsets.only(top: 32),
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () => provider.toggleExpanded(),
+                  child: Text(
+                    provider.isExpanded ? 'See less' : 'Load more',
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class _ProjectRowWidget extends StatelessWidget {
+  const _ProjectRowWidget({
+    required this.project,
+    required this.isEven,
+  });
+
+  final ProjectItemUi project;
+  final bool isEven;
+
+  static const _cardRatio = 45;
+  static const _textRatio = 55;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => launchWebUrl(Uri.parse(project.cta), context),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 16.0,
+          vertical: 24.0,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: isEven
+              ? [
+                  Expanded(
+                      flex: _cardRatio, child: _ProjectCardWidget(project)),
+                  const SizedBox(width: 32),
+                  Expanded(flex: _textRatio, child: Text(project.desc)),
+                ]
+              : [
+                  Expanded(flex: _textRatio, child: Text(project.desc)),
+                  const SizedBox(width: 32),
+                  Expanded(
+                      flex: _cardRatio, child: _ProjectCardWidget(project)),
+                ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ProjectCardWidget extends StatelessWidget {
+  const _ProjectCardWidget(this.project);
+
+  final ProjectItemUi project;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        image: DecorationImage(
+          image: AssetImage(project.image),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Stack(
+        fit: StackFit.expand,
+        alignment: Alignment.bottomCenter,
+        children: [
+          Positioned(
+            top: 16,
+            right: 0,
+            child: _PlatformStackWidget(project.stacks),
+          ),
+          _ProjectInfoCardWidget(project)
+        ],
+      ),
+    );
+  }
+}
+
+class _ProjectInfoCardWidget extends StatelessWidget {
+  const _ProjectInfoCardWidget(this.project);
+
+  final ProjectItemUi project;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Expanded(child: SizedBox.shrink()),
+        Container(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(16),
+              bottomRight: Radius.circular(16),
+            ),
+            color: AppColors.black70,
+          ),
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Container(
+                width: 32,
+                height: 32,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  image: DecorationImage(
+                    image: AssetImage(project.logo),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      project.timeline,
+                      style: Theme.of(context).textTheme.labelSmall,
+                    ),
+                    Text(
+                      project.title,
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _PlatformStackWidget extends StatelessWidget {
+  const _PlatformStackWidget(this.stacks);
+
+  final List<TechStack> stacks;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(32),
+          bottomLeft: Radius.circular(32),
+        ),
+        color: AppColors.black70,
+      ),
+      padding: const EdgeInsets.only(left: 24, right: 16, top: 8, bottom: 8),
+      child: Row(
+        spacing: 12,
+        children: stacks
+            .map((stack) =>
+                SvgPicture.asset(height: 24, width: 24, stack.iconPath))
+            .toList(),
+      ),
+    );
+  }
+}
