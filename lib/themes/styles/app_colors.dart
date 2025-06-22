@@ -39,6 +39,7 @@ class AppColorsDark {
   static const onSecondary = Color(0xFFCECECE);
 
   static const surface = Color(0xFF161513);
+  static const surfaceDim = Color(0xBF161513);
   static const onSurface = AppColors.white;
 
   static const error = AppColors.retroRed;

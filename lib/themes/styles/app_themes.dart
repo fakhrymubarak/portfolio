@@ -16,6 +16,7 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
     secondary: AppColorsDark.secondary,
     onSecondary: AppColorsDark.onSecondary,
     surface: AppColorsDark.surface,
+    surfaceDim: AppColorsDark.surface,
     onSurface: AppColorsDark.onSurface,
     error: AppColorsDark.error,
     onError: AppColorsDark.onError,
@@ -31,8 +32,8 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
         ? TextStyles.extraBold20pt(defaultColors)
         : TextStyles.extraBold28pt(defaultColors),
     headlineSmall: isMobile
-        ? TextStyles.semiBold16pt(defaultColors)
-        : TextStyles.semiBold20pt(defaultColors),
+        ? TextStyles.bold16Pt(defaultColors)
+        : TextStyles.bold20Pt(defaultColors),
     bodyLarge: isMobile
         ? TextStyles.reg14pt(defaultColors)
         : TextStyles.reg24pt(defaultColors),

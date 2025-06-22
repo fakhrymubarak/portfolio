@@ -92,6 +92,25 @@ class TextStyles {
     );
   }
 
+  // Bold(w700), 20pt
+  static TextStyle bold20Pt([Color? color]) {
+    return GoogleFonts.poppins(
+      fontSize: 20,
+      fontWeight: FontWeight.w700,
+      color: color ?? AppColors.black,
+    );
+  }
+
+
+  // Bold(w700), 16pt
+  static TextStyle bold16Pt([Color? color]) {
+    return GoogleFonts.poppins(
+      fontSize: 16,
+      fontWeight: FontWeight.w700,
+      color: color ?? AppColors.black,
+    );
+  }
+
   // SemiBold(w600), 24pt
   static TextStyle semiBold24pt([Color? color]) {
     return GoogleFonts.poppins(

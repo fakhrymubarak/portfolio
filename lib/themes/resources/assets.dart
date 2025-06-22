@@ -49,6 +49,7 @@ class Assets {
   static const imgHressBg = "$_assetImagePath/img_hress.webp";
   static const imgLifelogBg = "$_assetImagePath/img_lifelog.webp";
   static const imgMytelkomselBg = "$_assetImagePath/img_mytelkomsel.webp";
+  static const imgContactMe = "$_assetImagePath/img_contact_me.webp";
 
   /* Logo Projects */
   static const icAkuisisiLoyalty = "$_assetImagePath/ic_akuisisi_loyalty.webp";
