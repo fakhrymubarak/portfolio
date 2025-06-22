@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       scrollBehavior: SmoothScrollBehavior(),
-      title: "Fakhry Mubarak",
+      title: 'Fakhry Mubarak',
       theme: getAppTheme(context, true),
       home: const PortfolioWebPageV1(),
     );

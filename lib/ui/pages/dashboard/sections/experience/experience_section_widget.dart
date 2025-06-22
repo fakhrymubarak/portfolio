@@ -42,9 +42,9 @@ class ExperienceSectionWidget extends StatelessWidget {
 }
 
 class _ExperienceCardWidget extends StatelessWidget {
-  final ExperienceItemUi experience;
-
   const _ExperienceCardWidget(this.experience);
+
+  final ExperienceItemUi experience;
 
   @override
   Widget build(BuildContext context) {

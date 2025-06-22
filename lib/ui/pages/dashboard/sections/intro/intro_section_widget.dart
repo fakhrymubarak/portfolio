@@ -21,7 +21,8 @@ class IntroSectionWidget extends StatelessWidget {
     return CustomBackgroundSectionWidget(
       child: Center(
         child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: AppSize.maxWidthHome, minHeight: screenHeight),
+          constraints: BoxConstraints(
+              maxWidth: AppSize.maxWidthHome, minHeight: screenHeight),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -48,7 +49,7 @@ class IntroSectionWidget extends StatelessWidget {
               // Subtitle
               const SizedBox(height: 8),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Text(section.description, textAlign: TextAlign.center),
               ),
               const SizedBox(height: 50),
@@ -81,14 +82,14 @@ class IntroSectionWidget extends StatelessWidget {
 }
 
 class ToolsWidget extends StatelessWidget {
-  final String title;
-  final String imagePath;
-
   const ToolsWidget({
-    super.key,
     required this.title,
     required this.imagePath,
+    super.key,
   });
+
+  final String title;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {

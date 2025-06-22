@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/themes/themes.dart';
 
 class CustomBackgroundSectionWidget extends StatelessWidget {
-  final Widget child;
-
   const CustomBackgroundSectionWidget({required this.child, super.key});
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {

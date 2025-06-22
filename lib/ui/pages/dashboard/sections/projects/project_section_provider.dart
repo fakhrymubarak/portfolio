@@ -19,11 +19,11 @@ class ProjectSectionProvider extends ChangeNotifier {
             'In this project, I was responsible for planning, developing, and delivering multiple key features using Kotlin and Java within a clean architecture that adheres to SOLID principles. '
             'I also led and mentored junior developers, ensuring high code quality and team performance across various feature tracks.',
         cta:
-            "https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm",
+            'https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm',
         stacks: [
-          TechStack(name: "Android", iconPath: Assets.icAndroidLight),
-          TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
-          TechStack(name: "Java", iconPath: Assets.icJavaLight),
+          TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
+          TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),
+          TechStack(name: 'Java', iconPath: Assets.icJavaLight),
         ],
       ),
       ProjectItemUi(
@@ -36,10 +36,10 @@ class ProjectSectionProvider extends ChangeNotifier {
             'I developed the mobile app using Flutter with Bloc state management, focusing on clean, scalable, and robust architecture for both Android and iOS platforms. '
             'My responsibilities included implementing core features, maintaining performance consistency, and delivering a user-friendly interface tailored to the organization’s needs.',
         cta:
-            "https://play.google.com/store/apps/details?id=com.alkhairaat.membership",
+            'https://play.google.com/store/apps/details?id=com.alkhairaat.membership',
         stacks: [
-          TechStack(name: "Android", iconPath: Assets.icAndroidLight),
-          TechStack(name: "Flutter", iconPath: Assets.icFlutterLight),
+          TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
+          TechStack(name: 'Flutter', iconPath: Assets.icFlutterLight),
         ],
       ),
       ProjectItemUi(
@@ -52,11 +52,11 @@ class ProjectSectionProvider extends ChangeNotifier {
             'My primary responsibility included migrating the entire codebase from Java to Kotlin (up to 97%) and refactoring the architecture from MVP to MVVM. '
             'In addition, I worked on a white-label variant of the app using Flutter, expanding its usability across multiple brand implementations and streamlining future development processes.',
         cta:
-            "https://play.google.com/store/apps/details?id=com.kalbe.cakraloyalty",
+            'https://play.google.com/store/apps/details?id=com.kalbe.cakraloyalty',
         // cta: "https://apkpure.com/chakra-rewards/com.kalbe.cakraloyalty, // alternative CTA.
         stacks: [
-          TechStack(name: "Android", iconPath: Assets.icAndroidLight),
-          TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
+          TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
+          TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),
         ],
       ),
       ProjectItemUi(
@@ -68,10 +68,10 @@ class ProjectSectionProvider extends ChangeNotifier {
             'Akuisisi Loyalty is an Android application developed by PT Cakra Radha Mustika to support sales team operations in acquiring and tracking loyalty members. '
             'Built using Kotlin, I focused on implementing the feature set required for progress tracking, reporting, and member engagement. '
             'I also ensured smooth UX flows, robust network operations, and an architecture that could scale with the organization’s future loyalty programs.',
-        cta: "https://play.google.com/store/apps/details?id=com.kalbe.crm.dmqi",
+        cta: 'https://play.google.com/store/apps/details?id=com.kalbe.crm.dmqi',
         stacks: [
-          TechStack(name: "Android", iconPath: Assets.icAndroidLight),
-          TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
+          TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
+          TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),
         ],
       ),
       ProjectItemUi(
@@ -84,10 +84,10 @@ class ProjectSectionProvider extends ChangeNotifier {
             'I contributed to building this solution using Kotlin, ensuring the app remained efficient and aligned with the operational workflow of the field teams. '
             'My role also included integrating offline capabilities, syncing with backend systems, and maintaining a clean user experience in varying field conditions.',
         cta:
-            "https://play.google.com/store/apps/details?id=com.kalbe.crm.hress",
+            'https://play.google.com/store/apps/details?id=com.kalbe.crm.hress',
         stacks: [
-          TechStack(name: "Android", iconPath: Assets.icAndroidLight),
-          TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
+          TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
+          TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),
         ],
       ),
       ProjectItemUi(
@@ -99,10 +99,10 @@ class ProjectSectionProvider extends ChangeNotifier {
             'Lifelog is a personal journaling and mood tracking Android application, created as my first published app on the Google Play Store. '
             'I built the entire app from scratch using Java and Kotlin, applying what I learned as a self-taught developer during my early Android journey. '
             'The app allows users to log their daily thoughts, emotions, and mental well-being—helping them reflect and grow over time.',
-        cta: "https://play.google.com/store/apps/details?id=com.fakhry.lifelog",
+        cta: 'https://play.google.com/store/apps/details?id=com.fakhry.lifelog',
         stacks: [
-          TechStack(name: "Android", iconPath: Assets.icAndroidLight),
-          TechStack(name: "Kotlin", iconPath: Assets.icKotlinLight),
+          TechStack(name: 'Android', iconPath: Assets.icAndroidLight),
+          TechStack(name: 'Kotlin', iconPath: Assets.icKotlinLight),
         ],
       ),
     ],

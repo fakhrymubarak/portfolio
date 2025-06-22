@@ -1,5 +1,15 @@
 // Data Classes
 class HomeSectionUi {
+  HomeSectionUi({
+    required this.title,
+    required this.description,
+    required this.imagePath,
+    required this.btnInteraction1,
+    required this.btnInteraction2,
+    required this.techStackSection,
+    this.subtitle,
+  });
+
   final List<String> title;
   final String? subtitle;
   final String description;
@@ -7,29 +17,23 @@ class HomeSectionUi {
   final String btnInteraction1;
   final String btnInteraction2;
   final TechStackSectionUi techStackSection;
-
-  HomeSectionUi({
-    required this.title,
-    this.subtitle,
-    required this.description,
-    required this.imagePath,
-    required this.btnInteraction1,
-    required this.btnInteraction2,
-    required this.techStackSection,
-  });
 }
 
 class TechStackSectionUi {
+  TechStackSectionUi({
+    required this.title,
+    required this.highlightStacks,
+    required this.stacks,
+  });
+
   final String title;
   final List<TechStack> stacks;
   final List<TechStack> highlightStacks;
-
-  TechStackSectionUi({required this.title, required this.highlightStacks, required this.stacks});
 }
 
 class TechStack {
+  TechStack({required this.name, required this.iconPath});
+
   final String iconPath;
   final String name;
-
-  TechStack({required this.name, required this.iconPath});
 }

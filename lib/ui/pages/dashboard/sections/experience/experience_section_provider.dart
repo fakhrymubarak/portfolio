@@ -8,7 +8,7 @@ class ExperienceSectionProvider extends ChangeNotifier {
     experiences: [
       ExperienceItemUi(
         title: 'Android Developer for MyTelkomsel',
-        companyAndStatus: "PHINCON · Full-time",
+        companyAndStatus: 'PHINCON · Full-time',
         logoPath: Assets.icPhincon,
         date: 'Jul 2023 — Present · 2 yrs',
         description: '''
@@ -22,7 +22,7 @@ Plan, develop, and build features with SOLID principles and clean architecture.
       ExperienceItemUi(
         title: 'Mobile Development Instructor',
         companyAndStatus:
-            "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka · Part-time",
+            'Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka · Part-time',
         logoPath: Assets.icBangkit,
         date: 'Feb 2024 — Dec 2024 · 11 mos',
         description:
@@ -30,7 +30,7 @@ Plan, develop, and build features with SOLID principles and clean architecture.
       ),
       ExperienceItemUi(
         title: 'Software Engineer (Mobile | Kotlin & Flutter)',
-        companyAndStatus: "PT. Cakra Radha Mustika (Kalbe Group) · Contract",
+        companyAndStatus: 'PT. Cakra Radha Mustika (Kalbe Group) · Contract',
         logoPath: Assets.icCrm,
         date: 'Jan 2022 — Jun 2023 · 1 yr 6 mos',
         description: '''

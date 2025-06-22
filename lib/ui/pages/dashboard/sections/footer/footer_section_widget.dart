@@ -74,10 +74,10 @@ class FooterSectionWidget extends StatelessWidget {
 }
 
 class HoverLink extends StatefulWidget {
+  const HoverLink({required this.label, required this.url, super.key});
+
   final String label;
   final String url;
-
-  const HoverLink({required this.label, required this.url, super.key});
 
   @override
   State<HoverLink> createState() => _HoverLinkState();

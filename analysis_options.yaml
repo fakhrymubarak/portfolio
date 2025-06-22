@@ -14,14 +14,9 @@ linter:
   rules:
     avoid_print: false
     unnecessary_const: true
-    unused_element: true
     unnecessary_late: true
     unnecessary_this: true
-    unnecessary_final: true
     prefer_const_constructors: true
-    prefer_const_literals_to_create_immutables: true
-    prefer_final_locals: true
-    prefer_final_in_for_each: true
     avoid_unused_constructor_parameters: true
     avoid_field_initializers_in_const_classes: true
     avoid_redundant_argument_values: true

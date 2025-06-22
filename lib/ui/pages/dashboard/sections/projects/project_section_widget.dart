@@ -26,7 +26,6 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
           minHeight: screenHeight,
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GradientText(
               text: section.title,
@@ -59,13 +58,13 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
 }
 
 class _ProjectRowWidget extends StatelessWidget {
-  final ProjectItemUi project;
-  final bool isEven;
-
   const _ProjectRowWidget({
     required this.project,
     required this.isEven,
   });
+
+  final ProjectItemUi project;
+  final bool isEven;
 
   static const _cardRatio = 45;
   static const _textRatio = 55;
@@ -102,9 +101,9 @@ class _ProjectRowWidget extends StatelessWidget {
 }
 
 class _ProjectCardWidget extends StatelessWidget {
-  final ProjectItemUi project;
-
   const _ProjectCardWidget(this.project);
+
+  final ProjectItemUi project;
 
   @override
   Widget build(BuildContext context) {
@@ -134,17 +133,17 @@ class _ProjectCardWidget extends StatelessWidget {
 }
 
 class _ProjectInfoCardWidget extends StatelessWidget {
-  final ProjectItemUi project;
-
   const _ProjectInfoCardWidget(this.project);
+
+  final ProjectItemUi project;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: SizedBox.shrink()),
+        const Expanded(child: SizedBox.shrink()),
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(16),
               bottomRight: Radius.circular(16),
@@ -189,21 +188,21 @@ class _ProjectInfoCardWidget extends StatelessWidget {
 }
 
 class _PlatformStackWidget extends StatelessWidget {
-  final List<TechStack> stacks;
-
   const _PlatformStackWidget(this.stacks);
+
+  final List<TechStack> stacks;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),
           bottomLeft: Radius.circular(32),
         ),
         color: AppColors.black70,
       ),
-      padding: EdgeInsets.only(left: 24, right: 16, top: 8, bottom: 8),
+      padding: const EdgeInsets.only(left: 24, right: 16, top: 8, bottom: 8),
       child: Row(
         spacing: 12,
         children: stacks
