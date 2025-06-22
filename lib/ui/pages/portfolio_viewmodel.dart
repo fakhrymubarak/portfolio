@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:portfolio/themes/resources/resource.dart';
 import 'package:portfolio/ui/model/contact_section_ui.dart';
-import 'package:portfolio/ui/model/experience_section_ui.dart';
 import 'package:portfolio/ui/model/home_section_ui.dart';
 import 'package:portfolio/ui/model/navigation_bar_section_ui.dart';
 import 'package:portfolio/utils/constant.dart';
@@ -18,7 +17,6 @@ class PortfolioViewModel extends ChangeNotifier {
   late List<NavigationBarSectionUi> navBarSections;
 
   late final HomeSectionUi homeSection;
-  late final ExperienceSectionUi experienceSection;
   late final ContactSectionUi contactSection;
 
   PortfolioViewModel() {
@@ -63,48 +61,6 @@ class PortfolioViewModel extends ChangeNotifier {
       ),
     );
 
-    experienceSection = ExperienceSectionUi(
-      title: 'Experience',
-      experiences: [
-        ExperienceItemUi(
-          title: 'Android Developer for MyTelkomsel',
-          logo:
-              'https://media.licdn.com/dms/image/v2/C560BAQGlo4pZo6rcaQ/company-logo_100_100/company-logo_100_100/0/1631379820861?e=1743638400&v=beta&t=O17Ni3hryshz-PYyddPibHQwMp56cSmiwEUMGmRul1c',
-          date: 'Jul 2023 — Present · 1 yr 7 mos',
-          description: """
-Milestones : 
-- In the first 3 months, I have been working in the SuperApp Squad. We plan and execute some concepts to integrate other apps with MyTelkomsel.
-- Moved to Customer Interaction Squad and developed Help Center, Veronika Chat, and InApp Chat features.
-- Assigned to assist Engagement Squad in developing Commerce features.
-Plan, develop, and build features with SOLID principles and clean architecture.
-""",
-        ),
-        ExperienceItemUi(
-          title: 'Mobile Development Instructor',
-          logo:
-              'https://media.licdn.com/dms/image/v2/C560BAQEVREspL4ipDQ/company-logo_100_100/company-logo_100_100/0/1630661916225/bangkit_academy_logo?e=1743638400&v=beta&t=amVqzi2oAgYEnCSmARtu4qnPMP3Mn7qK4IlYqSpPw7I',
-          date: 'Feb 2024 — Dec 2024 · 11 mos',
-          description:
-              'Help the Bangkit cohort to understand the Android Development course material through ILT sessions..',
-        ),
-        ExperienceItemUi(
-          title: 'Software Engineer (Mobile | Kotlin & Flutter)',
-          logo:
-              'https://media.licdn.com/dms/image/v2/C560BAQEr14Jn030ACQ/company-logo_100_100/company-logo_100_100/0/1630572054737/pt_cakra_radha_mustika_kalbe_group_logo?e=1743638400&v=beta&t=4RuSRbQWtDxYaoWx_aEKhXn5f7yP2JjBfkyqDz_cNKk',
-          date: 'Jan 2022 — Jun 2023 · 1 yr 6 mos',
-          description: """
-- Migrating Chakra android app data source from vendor server to CRM server (~80 API endpoint)
-- Migrating app architecture pattern from MVP to MVVM
-- Migrating source code language from 100% Java to 97% Kotlin
-- Design and Implement repository pattern.
-- Maintaining chakra rewards apps.
-- Creating human resource employee self-service (HRESS) android apps for the HRGA department.
-- Mentoring 2 interns to work on a HRESS android apps
-- Creating White Label Loyalty Apps for Android and iOS platforms using Flutter.
-""",
-        ),
-      ],
-    );
 
     contactSection = ContactSectionUi(
       title: 'Contact',

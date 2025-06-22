@@ -10,13 +10,15 @@ class ExperienceSectionUi {
 
 class ExperienceItemUi {
   final String title;
-  final String logo;
+  final String companyAndStatus;
+  final String logoPath;
   final String date;
   final String description;
 
   ExperienceItemUi({
     required this.title,
-    required this.logo,
+    required this.companyAndStatus,
+    required this.logoPath,
     required this.date,
     required this.description,
   });

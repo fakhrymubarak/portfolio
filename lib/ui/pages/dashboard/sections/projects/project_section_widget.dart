@@ -16,11 +16,15 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = context.watch<ProjectSectionProvider>();
     final section = provider.section;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return Center(
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 64),
-        constraints: const BoxConstraints(maxWidth: AppSize.maxWidthHome),
+        constraints: BoxConstraints(
+          maxWidth: AppSize.maxWidthHome,
+          minHeight: screenHeight,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -53,7 +57,6 @@ class ProjectSectionWidgetV2 extends StatelessWidget {
     );
   }
 }
-
 
 class _ProjectRowWidget extends StatelessWidget {
   final ProjectItemUi project;

@@ -57,4 +57,9 @@ class Assets {
   static const icHressCrm = "$_assetImagePath/ic_hress_crm.webp";
   static const icLifelog = "$_assetImagePath/ic_lifelog.webp";
   static const icMytelkomsel = "$_assetImagePath/ic_mytelkomsel.webp";
+
+  /* Experience Logos */
+  static const icBangkit = "$_assetImagePath/ic_bangkit.webp";
+  static const icCrm = "$_assetImagePath/ic_crm.webp";
+  static const icPhincon = "$_assetImagePath/ic_phincon.webp";
 }
