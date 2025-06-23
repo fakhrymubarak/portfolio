@@ -1,4 +1,4 @@
-package com.fakhry.portfolio
+package com.fakhry.showcase
 
 import io.flutter.embedding.android.FlutterActivity
 

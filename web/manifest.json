@@ -1,11 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "Fakhry Mubarak",
+    "short_name": "Fakhry",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Showcase of Fakhry's Portfolio.",
+    "description": "Showcase of Fakhry Mubarak's Portfolio.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

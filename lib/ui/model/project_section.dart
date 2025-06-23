@@ -1,4 +1,4 @@
-import 'package:portfolio/ui/model/home_section_ui.dart';
+import 'package:showcase/ui/model/home_section_ui.dart';
 
 class ProjectSectionUi {
   ProjectSectionUi({
