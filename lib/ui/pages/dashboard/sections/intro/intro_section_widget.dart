@@ -94,7 +94,7 @@ class ToolsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final imageSize = getIsMobile(context) ? 28.0 : 54.0;
+    final imageSize = getIsMobile(context) ? 32.0 : 54.0;
 
     return Column(
       mainAxisSize: MainAxisSize.min,

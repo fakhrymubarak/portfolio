@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:showcase/core/ui/scroll/smooth_scroll_behaviour.dart';
 import 'package:showcase/themes/themes.dart';
 import 'package:showcase/ui/pages/dashboard/portfolio_web_page_v1.dart';
 
@@ -14,7 +13,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      scrollBehavior: SmoothScrollBehavior(),
       title: 'Fakhry Mubarak',
       theme: getAppTheme(context, true),
       home: const PortfolioWebPageV1(),

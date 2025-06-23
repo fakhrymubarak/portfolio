@@ -20,13 +20,13 @@ class CustomBackgroundSectionWidget extends StatelessWidget {
           // Background glow elements
           Align(
             alignment: const Alignment(-1.3, -1.3),
-            child: Image.asset(Assets.imgBlurKotlin, width: 600, height: 600),
+            child: Image.asset(Assets.imgBlurFlutter, width: 600, height: 600),
           ),
           Positioned.fill(
             child: Align(
-              alignment: const Alignment(1.3, 2),
+              alignment: const Alignment(1.3, 1.3),
               child:
-                  Image.asset(Assets.imgBlurFlutter, width: 600, height: 600),
+                  Image.asset(Assets.imgBlurKotlin, width: 600, height: 600),
             ),
           ),
           child

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'app_colors.dart';
+
 part 'text_styles.dart';
 
 ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
@@ -76,7 +77,7 @@ ThemeData getAppTheme(BuildContext context, bool isDarkMode) {
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         foregroundColor: AppColorsDark.secondary,
-        side: BorderSide(color: AppColorsDark.onSecondary, width: 2),
+        side: const BorderSide(color: AppColorsDark.onSecondary, width: 2),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       ),
     ),
