@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/core/ui/text/gradient_text_widget.dart';
-import 'package:portfolio/themes/themes.dart';
-import 'package:portfolio/themes/values/app_size.dart';
-import 'package:portfolio/ui/model/home_section_ui.dart';
-import 'package:portfolio/ui/model/project_section.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/projects/project_section_provider.dart';
-import 'package:portfolio/utils/ui_utils.dart';
+import 'package:showcase/core/ui/text/gradient_text_widget.dart';
+import 'package:showcase/themes/themes.dart';
+import 'package:showcase/themes/values/app_size.dart';
+import 'package:showcase/ui/model/home_section_ui.dart';
+import 'package:showcase/ui/model/project_section.dart';
+import 'package:showcase/ui/pages/dashboard/sections/projects/project_section_provider.dart';
+import 'package:showcase/utils/ui_utils.dart';
 import 'package:provider/provider.dart';
 
 class ProjectSectionWidgetV2 extends StatefulWidget {

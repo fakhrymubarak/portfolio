@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/themes/resources/resource.dart';
-import 'package:portfolio/ui/model/footer_section_ui.dart';
+import 'package:showcase/themes/resources/resource.dart';
+import 'package:showcase/ui/model/footer_section_ui.dart';
 
 class FooterSectionProvider extends ChangeNotifier {
   final FooterSectionUi section = const FooterSectionUi(

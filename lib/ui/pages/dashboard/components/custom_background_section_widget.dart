@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/themes/themes.dart';
+import 'package:showcase/themes/themes.dart';
 
 class CustomBackgroundSectionWidget extends StatelessWidget {
   const CustomBackgroundSectionWidget({required this.child, super.key});

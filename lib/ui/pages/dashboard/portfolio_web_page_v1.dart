@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/themes/resources/resource.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/experience/experience_section_provider.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/experience/experience_section_widget.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/footer/footer_section_provider.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/footer/footer_section_widget.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/intro/intro_section_provider.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/intro/intro_section_widget.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/projects/project_section_provider.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/projects/project_section_widget.dart';
+import 'package:showcase/themes/resources/resource.dart';
+import 'package:showcase/ui/pages/dashboard/sections/experience/experience_section_provider.dart';
+import 'package:showcase/ui/pages/dashboard/sections/experience/experience_section_widget.dart';
+import 'package:showcase/ui/pages/dashboard/sections/footer/footer_section_provider.dart';
+import 'package:showcase/ui/pages/dashboard/sections/footer/footer_section_widget.dart';
+import 'package:showcase/ui/pages/dashboard/sections/intro/intro_section_provider.dart';
+import 'package:showcase/ui/pages/dashboard/sections/intro/intro_section_widget.dart';
+import 'package:showcase/ui/pages/dashboard/sections/projects/project_section_provider.dart';
+import 'package:showcase/ui/pages/dashboard/sections/projects/project_section_widget.dart';
 import 'package:provider/provider.dart';
 
 class PortfolioWebPageV1 extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/themes/resources/resource.dart';
-import 'package:portfolio/ui/model/home_section_ui.dart';
+import 'package:showcase/themes/resources/resource.dart';
+import 'package:showcase/ui/model/home_section_ui.dart';
 
 class IntroSectionProvider extends ChangeNotifier {
   final HomeSectionUi section = HomeSectionUi(
