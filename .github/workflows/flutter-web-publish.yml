@@ -26,7 +26,7 @@ jobs:
 
       # Step 4: Build Flutter web
       - name: Build Flutter Web
-        run: flutter build web --release
+        run: flutter build web --release --base-href "/showcase-v1"
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
@@ -35,3 +35,5 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # Use your PAT here
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/web
+          # For non-.github.io repositories, the site will be available at:
+          # https://fakhrymubarak.github.io/showcase-v1/
