@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolio/core/ui/text/gradient_text_widget.dart';
-import 'package:portfolio/themes/styles/app_themes.dart';
-import 'package:portfolio/themes/values/app_size.dart';
-import 'package:portfolio/ui/pages/dashboard/components/custom_background_section_widget.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/intro/intro_section_provider.dart';
-import 'package:portfolio/utils/ui_utils.dart';
+import 'package:showcase/core/ui/text/gradient_text_widget.dart';
+import 'package:showcase/themes/styles/app_themes.dart';
+import 'package:showcase/themes/values/app_size.dart';
+import 'package:showcase/ui/pages/dashboard/components/custom_background_section_widget.dart';
+import 'package:showcase/ui/pages/dashboard/sections/intro/intro_section_provider.dart';
+import 'package:showcase/utils/ui_utils.dart';
 import 'package:provider/provider.dart';
 
 class IntroSectionWidget extends StatelessWidget {
@@ -94,7 +94,7 @@ class ToolsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final imageSize = getIsMobile(context) ? 28.0 : 54.0;
+    final imageSize = getIsMobile(context) ? 32.0 : 54.0;
 
     return Column(
       mainAxisSize: MainAxisSize.min,

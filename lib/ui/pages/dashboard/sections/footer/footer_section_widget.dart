@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/themes/styles/app_themes.dart';
-import 'package:portfolio/ui/pages/dashboard/sections/footer/footer_section_provider.dart';
-import 'package:portfolio/utils/ui_utils.dart';
+import 'package:showcase/themes/styles/app_themes.dart';
+import 'package:showcase/ui/pages/dashboard/sections/footer/footer_section_provider.dart';
+import 'package:showcase/utils/ui_utils.dart';
 import 'package:provider/provider.dart';
 
 class FooterSectionWidget extends StatelessWidget {

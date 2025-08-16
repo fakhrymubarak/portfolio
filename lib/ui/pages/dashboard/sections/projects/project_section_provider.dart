@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/themes/resources/resource.dart';
-import 'package:portfolio/ui/model/home_section_ui.dart';
-import 'package:portfolio/ui/model/project_section.dart';
+import 'package:showcase/themes/resources/resource.dart';
+import 'package:showcase/ui/model/home_section_ui.dart';
+import 'package:showcase/ui/model/project_section.dart';
 
 class ProjectSectionProvider extends ChangeNotifier {
   static const int initialCount = 3;

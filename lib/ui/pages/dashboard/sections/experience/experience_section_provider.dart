@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/themes/resources/resource.dart';
-import 'package:portfolio/ui/model/experience_section_ui.dart';
+import 'package:showcase/themes/resources/resource.dart';
+import 'package:showcase/ui/model/experience_section_ui.dart';
 
 class ExperienceSectionProvider extends ChangeNotifier {
   final ExperienceSectionUi section = ExperienceSectionUi(
